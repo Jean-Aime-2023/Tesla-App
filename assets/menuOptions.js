@@ -9,7 +9,7 @@ export default [
   {
     name: 'Climate',
     iconName: 'fan',
-    href: '/climate',
+    href: '/ClimateControl',
   },
   {
     name: 'Location',

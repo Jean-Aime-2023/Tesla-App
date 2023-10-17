@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import {
   FontAwesome,
@@ -10,6 +9,7 @@ import {
 import car from '../assets/images/car.png';
 import menuOptions from '../assets/menuOptions';
 import MenuOption from '../components/MenuOption';
+import { StatusBar } from 'expo-status-bar';
 
 const Controls=()=>{
   return(
@@ -29,7 +29,7 @@ const Controls=()=>{
 export default function Page() {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="grey" barStyle="default" hidden />
+      <StatusBar hidden />
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>My model S</Text>
