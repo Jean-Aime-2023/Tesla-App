@@ -6,10 +6,11 @@ import {
   MaterialCommunityIcons,
   FontAwesome5,
   Ionicons,
-  MaterialIcons,
 } from '@expo/vector-icons';
 import car from '../assets/images/car.png';
 import menuOptions from '../assets/menuOptions';
+import MenuOption from '../components/MenuOption';
+
 
 export default function Page() {
   return (
@@ -34,23 +35,8 @@ export default function Page() {
 
       <FlatList
         data={menuOptions}
-        renderItem={({ item }) => (
-          <View style={styles.optionRow}>
-            {/* Icon */}
-            <MaterialCommunityIcons name="car" size={26} color="gray" />
-
-            {/* Text */}
-            <Text style={styles.optionText}>{item.name}</Text>
-
-            {/* Icon */}
-            <MaterialIcons
-              name="keyboard-arrow-right"
-              size={24}
-              color="gray"
-              style={{ marginLeft: 'auto' }}
-            />
-          </View>
-        )}
+        showsVerticalScrollIndicator={false}
+        renderItem={MenuOption}
       />
     </View>
   );
@@ -84,16 +70,5 @@ const styles = StyleSheet.create({
   controls: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-  },
-  optionRow: {
-    flexDirection: 'row',
-    marginVertical: 20,
-    alignItems: 'center',
-  },
-  optionText: {
-    color: '#eee',
-    fontWeight: 18,
-    fontWeight: 'bold',
-    marginLeft: 10,
   },
 });
