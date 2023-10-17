@@ -1,40 +1,45 @@
-import { Text, View,StyleSheet } from 'react-native';
+import { Text, View, StyleSheet ,Pressable} from 'react-native';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
 const MenuOption = ({ item }) => {
   return (
-    <View style={styles.optionRow}>
-      {/* Icon */}
-      <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+    <Link href={item.href} asChild>
+      <Pressable style={styles.optionRow}>
+        {/* Icon */}
+        {item.icon ? (
+          <item.icon />
+        ) : (
+          <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+        )}
 
-      {/* Text */}
-      <Text style={styles.optionText}>{item.name}</Text>
+        {/* Text */}
+        <Text style={styles.optionText}>{item.name}</Text>
 
-      {/* Icon */}
-      <MaterialIcons
-        name="keyboard-arrow-right"
-        size={24}
-        color="gray"
-        style={{ marginLeft: 'auto' }}
-      />
-    </View>
+        {/* Icon */}
+        <MaterialIcons
+          name="keyboard-arrow-right"
+          size={24}
+          color="gray"
+          style={{ marginLeft: 'auto' }}
+        />
+      </Pressable>
+    </Link>
   );
 };
 
 export default MenuOption;
 
-
 const styles = StyleSheet.create({
-    optionRow: {
-      flexDirection: 'row',
-      marginVertical: 20,
-      alignItems: 'center',
-    },
-    optionText: {
-      color: '#eee',
-      fontWeight: 18,
-      fontWeight: 'bold',
-      marginLeft: 10,
-    },
-  });
-  
+  optionRow: {
+    flexDirection: 'row',
+    marginVertical: 20,
+    alignItems: 'center',
+  },
+  optionText: {
+    color: '#eee',
+    fontWeight: 18,
+    fontWeight: 'bold',
+    marginLeft: 10,
+  },
+});
