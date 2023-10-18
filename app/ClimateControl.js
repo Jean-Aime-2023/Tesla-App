@@ -27,7 +27,10 @@ const ClimateScreen = () => {
         <Text style={styles.label}>Interior 74°F - Exterior 66°F</Text>
 
         <View style={styles.controlsRow}>
-          <Pressable onPress={() => setOn(!on)} style={styles.iconButtonContainer}>
+          <Pressable
+            onPress={() => setOn(!on)}
+            style={styles.iconButtonContainer}
+          >
             <MaterialCommunityIcons
               name="power"
               size={42}
@@ -52,9 +55,18 @@ const ClimateScreen = () => {
             />
           </View>
 
-          <Pressable onPress={() => setvent(!vent)} style={styles.iconButtonContainer}>
-            <MaterialCommunityIcons name="car-door" size={42} color={vent ? 'white' : 'gray'}/>
-            <Text style={styles.iconButtonText}>{vent ? 'Vent' : 'Suppress'}</Text>
+          <Pressable
+            onPress={() => setvent(!vent)}
+            style={styles.iconButtonContainer}
+          >
+            <MaterialCommunityIcons
+              name="car-door"
+              size={42}
+              color={vent ? 'white' : 'gray'}
+            />
+            <Text style={styles.iconButtonText}>
+              {vent ? 'Vent' : 'Suppress'}
+            </Text>
           </Pressable>
         </View>
       </View>
