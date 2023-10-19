@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet ,Pressable} from 'react-native';
+import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 

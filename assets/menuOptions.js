@@ -1,4 +1,4 @@
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
 
 export default [
   {
@@ -38,7 +38,7 @@ export default [
   },
   {
     name: 'Doctor',
-    icon: ()=> <FontAwesome name="user-md" size={26} color="gray"/>,
+    icon: () => <FontAwesome name="user-md" size={26} color="gray" />,
     href: '/doctor',
   },
 ];
